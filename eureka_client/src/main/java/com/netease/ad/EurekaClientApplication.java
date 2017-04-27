@@ -1,5 +1,6 @@
 package com.netease.ad;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient
 @SpringBootApplication
 @RestController
+@Slf4j
 public class EurekaClientApplication {
     @Value("${server.port}")
     String port;
@@ -21,6 +23,7 @@ public class EurekaClientApplication {
 
     @RequestMapping("/hi")
     public String home(@RequestParam String name) {
+        log.info("home parameter is: {}", name);
         return "hi " + name + ",i am from port:" + port;
     }
 }
