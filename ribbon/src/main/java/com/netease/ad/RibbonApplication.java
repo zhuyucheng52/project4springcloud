@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableHystrix
 @EnableDiscoveryClient
 @SpringBootApplication
+//@EnableHystrixDashboard
 public class RibbonApplication {
 
     public static void main(String[] args) {
